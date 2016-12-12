@@ -1,0 +1,24 @@
+{
+  "manifest_version": 2,
+
+  "name": "Github Automerger",
+  "description": "Automerge functionality for Github",
+  "version": "1.0",
+
+  "background":{
+    "scripts":["background.js"]
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["https://github.com/*/*/pull/*"],
+      "js": ["myscript.js"]
+    }
+  ],
+
+  "permissions": [
+    "webNavigation",
+    "tabs",
+    "https://github.com/*/*/pull/*"
+  ]
+}
