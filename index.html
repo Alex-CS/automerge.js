@@ -6,6 +6,7 @@
     <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/github-dark.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/custom.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -19,10 +20,48 @@
 
         <header>
           <h1>Automerge.js</h1>
-          <h2>Small script/bookmarklet that updates branches, waits for tests to pass and merges in the PR.</h2>
+          <h2>Lightweight extension/bookmarklet for github that updates branches, waits for tests to pass and merges in the PR.</h2>
         </header>
 
-        <a href="javascript:(function()%7B(function()%7Bvar%20updateButton%3DgetButton(%22Update%20branch%22)%3Bif(updateButton)%7BupdateButton.click()%3Bvar%20mergeButtonCheck%3DsetInterval(function%20()%7Bif(tryMerge())%7BclearInterval(mergeButtonCheck)%3B%7D%7D%2C10000)%3B%7Delse%7BtryMerge()%3B%7Dfunction%20getButton(innerText)%7Bvar%20buttons%3Ddocument.getElementsByTagName('button')%3Bfor(var%20i%3D0%3Bi%3Cbuttons.length%3Bi%2B%2B)%7Bif(buttons%5Bi%5D.innerHTML.indexOf(innerText)!%3D-1)%7Breturn%20buttons%5Bi%5D%3B%7D%7D%7Dfunction%20tryMerge()%7Bvar%20mergeButton%3DgetButton(%22Merge%20pull%20request%22)%3Bif(!mergeButton.disabled)%7BmergeButton.click()%3Bvar%20confirmMerge%3DgetButton(%22Confirm%20%20merge%22)%3BconfirmMerge.click()%3Breturn%20true%3B%7Dreturn%20false%3B%7D%7D)()%7D)()">Bookmarklet</a>
+        <div class="Section">
+          <header>
+            <h3>Bookmarklet<h3>
+          </header>
+          <div style="display: flex">
+            <a class="ButtonLink" href="javascript:(function()%7B(function()%7Bvar%20updateButton%3DgetButton(%22Update%20branch%22)%3Bif(updateButton)%7BupdateButton.click()%3Bvar%20mergeButtonCheck%3DsetInterval(function%20()%7Bif(tryMerge())%7BclearInterval(mergeButtonCheck)%3B%7D%7D%2C10000)%3B%7Delse%7BtryMerge()%3B%7Dfunction%20getButton(innerText)%7Bvar%20buttons%3Ddocument.getElementsByTagName('button')%3Bfor(var%20i%3D0%3Bi%3Cbuttons.length%3Bi%2B%2B)%7Bif(buttons%5Bi%5D.innerHTML.indexOf(innerText)!%3D-1)%7Breturn%20buttons%5Bi%5D%3B%7D%7D%7Dfunction%20tryMerge()%7Bvar%20mergeButton%3DgetButton(%22Merge%20pull%20request%22)%3Bif(!mergeButton.disabled)%7BmergeButton.click()%3Bvar%20confirmMerge%3DgetButton(%22Confirm%20%20merge%22)%3BconfirmMerge.click()%3Breturn%20true%3B%7Dreturn%20false%3B%7D%7D)()%7D)()">Bookmarklet</a>
+            <div >Drag and drop this button to your bookmarks and use it whenever you want to merge a branch in.</div>
+          </div>
+        </div>
+
+        <header>
+          <h3>Chrome Extension<h3>
+        </header>
+        <div>
+          <div class="Step">
+            <h2>1. Download the Extension</h2>
+            <a class="ButtonLink" href="./automerger.crx" target: '_blank'>Download extension</a>
+          </div>
+          <div class="Step">
+            <h2>2. Open Settings</h2>
+            <img src="./images/extension1.jpg" height="300px"/>
+          </div>
+          <div class="Step">
+            <h2>3. Select Extensions Tab</h2>
+            <img src="./images/extension2.jpg" height="300px"/>
+          </div>
+          <div class="Step">
+            <h2>4. Drag and Drop the Downloaded .crx File</h2>
+            <img src="./images/extension3.jpg" height="200px"/>
+          </div>
+          <div class="Step">
+            <h2>5. Hide from the Extensions Bar</h2>
+            <img src="./images/extension4.jpg" height="200px"/>
+          </div>
+          <div class="Step">
+            <h2>6. Voila</h2>
+            <img src="./images/extension5.jpg" height="200px"/>
+          </div>
+        </div>
       </div>
     </div>
   </body>

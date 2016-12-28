@@ -1,0 +1,36 @@
+.Section {
+  margin-bottom: 36px;
+}
+
+.ButtonLink {
+  padding: 15px;
+  background-color: #d5000d;
+  color: white;
+  text-shadow: none;
+  display: inline-block;
+  margin-right: 15px;
+}
+
+.ButtonLink:hover {
+  color: white;
+  background-color: #c5000c;
+}
+
+h3 {
+  font-family: 'Chivo', 'Helvetica Neue', Helvetica, Arial, serif;
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 1.2;
+  color: #303030;
+  letter-spacing: -1px;
+}
+
+.Step {
+  display: block;
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+.Step h2 {
+  font-weight: 200;
+}
