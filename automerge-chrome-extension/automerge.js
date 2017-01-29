@@ -1,6 +1,13 @@
 (function() {
-  function _insertBefore(newNode, referenceNode) {
-    referenceNode.parentNode.insertBefore(newNode, referenceNode.previousSibling);
+  /**
+   * Insert `newNode` directly after `referenceNode`
+   *
+   * @private
+   * @param {Element} newNode
+   * @param {Element} referenceNode
+   */
+  function _insertAfter(newNode, referenceNode) {
+    referenceNode.parentNode.appendChild(newNode);
   }
 
   function _getButton(innerText) {
@@ -17,13 +24,16 @@
   if (updateButton && !updateButton.disabled) {
     var automergeButton = document.createElement('button');
     automergeButton.innerHTML = 'Automerge';
-    automergeButton.className = 'btn btn-primary';
-    _insertBefore(automergeButton, updateButton);
+    automergeButton.className = 'btn btn-primary tooltipped tooltipped-multiline tooltipped-n';
+    automergeButton.setAttribute('aria-label', 'Update branch then merge');
+    _insertAfter(automergeButton, updateButton);
 
     automergeButton.addEventListener('click', function(event) {
       function _tryMerge() {
         var mergeButton = _getButton('Merge pull request');
-        if (mergeButton.disabled) { return false };
+        if (mergeButton.disabled) {
+          return false;
+        }
 
         mergeButton.click();
         var confirmMerge = _getButton('Confirm  merge');
